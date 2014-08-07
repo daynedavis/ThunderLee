@@ -1,3 +1,7 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
 body {
 	width: 100%;
 	height: auto;
@@ -9,7 +13,7 @@ body {
 	height: 155px;
 	background-color: #abdeff;
 	position: relative;
-} 
+}
 
 #active {
 	color: #d0b109;
@@ -43,11 +47,11 @@ a:hover
 
 .content {
 	width: 100%;
-	height: auto;	
+	height: auto;
 }
 
 #banner {
-	width: 1000px;	
+	width: 1000px;
 	height: 600px;
 	background-color: #ff00d9;
 	margin: 0 auto;
