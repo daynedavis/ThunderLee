@@ -5,7 +5,8 @@
 body {
 	width: 100%;
 	height: auto;
-	/*background-color:#ffaab8;*/
+	/*background-color:#ffffe9;*/
+	color: #d0b109;
 }
 
 .header {
@@ -17,13 +18,15 @@ body {
 
 }
 
+h1 {
+	color: #d0b109;
+	font-weight: normal;
+}
+
 #logo {
 	padding-left: 5px;
 }
 
-#active {
-	color: #d0b109;
-}
 
 ul {
     list-style-type: none;
@@ -66,6 +69,14 @@ a:hover
 	height: 600px;
 	margin: 0 auto;
 	margin-top: 20px;
+}
+
+#banner img {
+	display: none;
+}
+
+#banner img.active {
+	display: block;
 }
 
 .third-container {
@@ -123,7 +134,7 @@ a:hover
 
 .mw-tile-container {
 	width: 1000px;
-	height: 320px;
+	height: 365px;
 	margin: 0 auto;
 	padding-left: -20px;
 	padding-top: 20px;
@@ -141,9 +152,9 @@ a:hover
 }
 a.foot {
 	text-decoration: none;
-	color:black;
-	
+	color:black;	
 }
+
 
 /* color hex codes:
 light blue: #abdeff
@@ -151,6 +162,7 @@ light pink: #ffaab8
 gold: #d0b109
 light yellow: #fdfec5
 light green: #c5fec8
-light purple: #cac7ff*/
+light purple: #cac7ff
+background yellow: #ffffe9*/
 
 
