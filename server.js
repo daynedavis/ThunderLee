@@ -29,7 +29,7 @@ app.use(passport.session());
 app.use(flash());*/
 
 // routes ======================================================================
-//require('./app/routes.js')(app, passport);
+require('./app/routes.js')(app, passport);
 //require('./config/passport')(passport);
 
 // listen (start app with node server.js) ======================================
