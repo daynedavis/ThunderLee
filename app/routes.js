@@ -9,7 +9,7 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/clothing', function(req, res) {
-		res.sendfile('./public/html/clothing.html');
+		res.sendfile('./public/html/clothing_template.html');
 	});
 
 	app.get('/featured', function(req, res) {
