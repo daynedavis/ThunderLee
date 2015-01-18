@@ -17,6 +17,7 @@
 		"morgan"          : "~1.1.1",
 		"method-override" : "~2.1.1",
 		"passport"        : "~0.1.17",
-		"passport-local"  : "~0.1.6"
+		"passport-local"  : "~0.1.6",
+		"stripe": "~2.2.0"
 	}
 }
