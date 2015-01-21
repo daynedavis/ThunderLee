@@ -5,7 +5,7 @@
 
 
 <head>
-	<title>Men's-Thunder Lee</title>
+	<title>Cart-Thunder Lee</title>
 	<script type="text/javascript" src="../js/sessvars.js"></script>
 	<script src="../js/jquery-1.11.1.min.js"></script>
 	<script src="../js/script.js"></script>
@@ -24,21 +24,23 @@
 	</div>
 
 	<div class="content">
-
-		<div class="mw-tile-container">
-		<h1>Men's</h1>
-			<div class="page-third first">
-				<a href="/clothing"><img src="../img/third_place.png"></a>
-			</div>
-			<div class="page-third">
-				<a href="/clothing"><img src="..//img/third_place.png"></a>
-			</div>
-			<div class="page-third">
-				<a href="/clothing"><img src="../img/third_place.png"></a>
-			</div>
-
+		<div class="clothes-container">
+			<h1>Your Shopping Cart</h1>
+			<form action="/stripe" method="POST">
+				  <script
+					src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+					data-key="pk_test_pGYlozhddnYncPbhyHecOOy4"
+					data-amount="2000"
+					data-name="Demo Site"
+					data-description="2 widgets ($20.00)"
+					data-image="/128x128.png">
+				  </script>
+			</form>
 		</div>
 	</div>
+	<script>
+	alert(sessvars.cart);
+	</script>
 
 	<div class="footer">
 	<a class="foot" href="html/contact.html ">Contact Us </a> <a class="foot" href="html/privacypolicy.html">| Privacy Policy </a> <a class="foot" href="html/termsofservice.html">| Terms of Service</a>

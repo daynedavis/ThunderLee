@@ -1,6 +1,9 @@
 
-$(document).ready(function() {
+console.log(document.cookie);
 
+
+
+$(document).ready(function() {
 	// Toggles pictures on the clothing pages
 	$("#small1").click(function() {
 		$("#big").attr('src', '../img/clothes_content2.png');
@@ -17,6 +20,19 @@ $(document).ready(function() {
 		$(this).fadeTo("fast", .5);
 		}, function(){
 			$(this).fadeTo("fast", 1)});
+			
+	// for adding to cart
+	$("#addCart").click(function() {
+		if(document.cooke >= 25){
+			document.cookie = document.cookie + 25;
+		}
+		else{
+			document.cookie=25;
+		}
+		console.log(document.cookie);
+		});
+		
+		
 });
 
 function swapImages() {
@@ -32,4 +48,6 @@ function swapImages() {
 }	
 
 setInterval('swapImages()', 5000);
+
+
 

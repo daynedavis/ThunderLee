@@ -6,6 +6,7 @@
 
 <head>
 	<title>Thunder Lee</title>
+	<script type="text/javascript" src="../js/sessvars.js"></script>
 	<script src="../js/jquery-1.11.1.min.js"></script>
 	<script src="../js/script.js"></script>
 </head>
@@ -17,7 +18,7 @@
 				<li><a class="nav" href="/featured">Featured</a></li>
 				<li><a class="nav" href="/mens">Men's</a></li>
 				<li><a class="nav" href="/womens">Women's</a></li>
-				<li><a class="nav" href="">Blog</a></li>
+				<li><a class="nav" href="/cart">Cart</a></li>
 				<li><a class="nav" href="/about">About</a></li>
 			</ul>
 	</div>
@@ -36,16 +37,8 @@
 			<div class="clothes-text">
 				This is where the clothing info will go as well as the buttons and dropdown and such
 				</br>
-				<form action="/stripe" method="POST">
-				  <script
-					src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					data-key="pk_test_pGYlozhddnYncPbhyHecOOy4"
-					data-amount="2000"
-					data-name="Demo Site"
-					data-description="2 widgets ($20.00)"
-					data-image="/128x128.png">
-				  </script>
-				</form>
+				
+				<img src="../img/add_to_cart.png" id="addCart">
 			</div>
 		</div>
 	</div>
