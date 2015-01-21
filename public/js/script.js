@@ -1,7 +1,7 @@
 
 console.log(document.cookie);
 
-
+var cart = 0;
 
 $(document).ready(function() {
 	// Toggles pictures on the clothing pages
@@ -23,12 +23,8 @@ $(document).ready(function() {
 			
 	// for adding to cart
 	$("#addCart").click(function() {
-		if(document.cooke >= 25){
-			document.cookie = document.cookie + 25;
-		}
-		else{
-			document.cookie=25;
-		}
+		cart = cart + 25;
+		document.cookie = cart;
 		console.log(document.cookie);
 		});
 		
