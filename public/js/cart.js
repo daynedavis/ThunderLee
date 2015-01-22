@@ -8,6 +8,7 @@ $(document).ready(function() {
 	else {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		console.log(cart);
+		$('#cartData').val(localStorage.getItem('cart'));
 	}
 	for (var shirt in cart) {
 		console.log('shirt');
