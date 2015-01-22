@@ -8,6 +8,7 @@
 	<title>Cart-Thunder Lee</title>
 	<script src="../js/jquery-1.11.1.min.js"></script>
 	<script src="../js/script.js"></script>
+	<script src="../js/cart.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -21,7 +22,6 @@
 				<li><a class="nav" href="/about">About</a></li>
 			</ul>
 	</div>
-
 	<table>
 		<thead>
 			<tr><th colspan="3">Cart</th></tr>
@@ -31,40 +31,13 @@
 				<th>Quantity</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<td>Red Shirt</td>
-				<td>Small</td>
-				<td>
-					1
-					<a href="#" class="button">+</a>
-					<a href="#" class="button">-</a>
-				</td>
-			</tr>
-			<tr>
-				<td>Blue Shirt</td>
-				<td>XL</td>
-				<td>
-					3
-					<a href="#" class="button">+</a>
-					<a href="#" class="button">-</a>
-				</td>
-			</tr>
-			<tr>
-				<td>White Shirt</td>
-				<td>Large</td>
-				<td>
-					2
-					<a href="#" class="button">+</a>
-					<a href="#" class="button">-</a>
-				</td>
-			</tr>
+		<tbody id="checkoutBody">
+
 		</tbody>
 	</table>
 
 	<div class="content">
 		<div class="clothes-container">
-			<h1>Your Shopping Cart</h1>
 			<form action="/stripe" method="POST">
 				  <script
 					src="https://checkout.stripe.com/checkout.js" class="stripe-button"

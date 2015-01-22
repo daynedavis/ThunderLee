@@ -28,8 +28,8 @@ $(document).ready(function() {
 	}, function() {
 		$(this).fadeTo("fast", 1);
 	});
-	
-	
+
+
 	$("#cartBlueTell").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		if($("#sizeBlueTell option:selected").text() == "Small") {
@@ -65,7 +65,7 @@ $(document).ready(function() {
 		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
-	
+
 	$("#cartLightBlue").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		if($("#sizeLightBlue option:selected").text() == "Small") {
@@ -83,7 +83,7 @@ $(document).ready(function() {
 		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
-	
+
 	$("#cartPink").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		if($("#sizePink option:selected").text() == "Small") {
@@ -101,7 +101,7 @@ $(document).ready(function() {
 		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
-	
+
 	$("#cartWhiteThunder").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		if($("#sizeWhiteThunder option:selected").text() == "Small") {
@@ -119,7 +119,7 @@ $(document).ready(function() {
 		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
-	
+
 	$("#cartStripeDrama").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		if($("#sizeStripeDrama option:selected").text() == "Small") {
@@ -137,7 +137,7 @@ $(document).ready(function() {
 		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
-	
+
 	$("#cartYellowDrama").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		if($("#sizeYellowDrama option:selected").text() == "Small") {
@@ -155,7 +155,7 @@ $(document).ready(function() {
 		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
-	
+
 	$("#clear").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		cart = { 'blueTell': {}, 'creamHappy': {}, 'lightBlueThunder': {}, 'pink': {},
