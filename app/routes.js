@@ -64,7 +64,7 @@ module.exports = function(app, passport) {
 		var stripeToken = req.body.stripeToken;
 
 		var charge = stripe.charges.create({
-		  amount: 2000, // amount in cents, again
+		  amount: 1000;//cart.blueTell.small * 2500 + cart.blueTell.medium * 2500 + cart.blueTell.large * 2500 + cart.blueTell.xlarge * 2500, // amount in cents, again
 		  currency: "usd",
 		  card: stripeToken,
 		  description: "payinguser@example.com"
