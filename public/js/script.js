@@ -1,5 +1,5 @@
 if (localStorage.getItem("cart") === null) {
-	var cart = { 'redShirt': 0, 'blueShirt': 0};
+	var cart = { 'redShirt': {}, 'blueShirt': {}};
 	localStorage.setItem('cart', JSON.stringify(cart));
 	console.log(cart);
 }
@@ -27,17 +27,47 @@ $(document).ready(function() {
 	}, function() {
 		$(this).fadeTo("fast", 1);
 	});
-
+	
+	
 	$("#redShirt").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
-		cart.redShirt+= 1;
+		if($("#red option:selected").text() == "Small") {
+			cart.redShirt.small = $("#quantityRed option:selected").val();
+		}
+		else if($("#red option:selected").text() == "Medium") {
+			cart.redShirt.medium = $("#quantityRed option:selected").val();
+		}
+		else if($("#red option:selected").text() == "Large") {
+			cart.redShirt.large = $("#quantityRed option:selected").val();
+		}
+		else if($("#red option:selected").text() == "XLarge") {
+			cart.redShirt.xlarge = $("#quantityRed option:selected").val();
+		};
 		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
 
 	$("#blueShirt").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
-		cart.blueShirt+= 1;
+		if($("#blue option:selected").text() == "Small") {
+			cart.blueShirt.small = $("#quantityBlue option:selected").text();
+		}
+		else if($("#blue option:selected").text() == "Medium") {
+			cart.blueShirt.medium = $("#quantityBlue option:selected").text();
+		}
+		else if($("#blue option:selected").text() == "Large") {
+			cart.blueShirt.large = $("#quantityBlue option:selected").text();
+		}
+		else if($("#blue option:selected").text() == "XLarge") {
+			cart.blueShirt.xlarge = $("#quantityBlue option:selected").text();
+		};
+		console.log(cart);
+		localStorage.setItem('cart', JSON.stringify(cart));
+	});
+	
+	$("#clear").click(function() {
+		cart = JSON.parse(localStorage.getItem('cart'));
+		cart = { 'redShirt': {}, 'blueShirt': {}};
 		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});

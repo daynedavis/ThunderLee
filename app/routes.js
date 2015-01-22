@@ -11,6 +11,10 @@ module.exports = function(app, passport) {
 	app.get('/clothing', function(req, res) {
 		res.sendfile('./public/html/clothing_template.html');
 	});
+	
+	app.get('/clothingRed', function(req, res) {
+		res.sendfile('./public/html/clothing_template2.html');
+	});
 
 	app.get('/featured', function(req, res) {
 		res.sendfile('./public/html/featured.html');
