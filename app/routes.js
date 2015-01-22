@@ -23,6 +23,9 @@ module.exports = function(app, passport) {
 	app.get('/womens', function(req, res) {
 		res.sendfile('./public/html/womens.html');
 	});
+	app.get('/cart', function(req, res) {
+		res.sendfile('./public/html/checkout.html');
+	});
 
 	app.post('/stripe', function(req, res) {
 
@@ -37,7 +40,7 @@ module.exports = function(app, passport) {
 		var stripeToken = req.body.stripeToken;
 
 		var charge = stripe.charges.create({
-		  amount: 1000, // amount in cents, again
+		  amount: 2000, // amount in cents, again
 		  currency: "usd",
 		  card: stripeToken,
 		  description: "payinguser@example.com"
