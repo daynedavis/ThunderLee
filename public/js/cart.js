@@ -1,7 +1,12 @@
 $(document).ready(function() {
 	if (localStorage.getItem("cart") === null) {
-		cart = { 'blueTell': {}, 'creamHappy': {}, 'lightBlueThunder': {}, 'pink': {},
-		'whiteThunder': {}, 'stripeDrama': {}, 'yellowDrama': {}};
+		cart = { 'blueTell': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'creamHappy': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'lightBlueThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'pink': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'whiteThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'stripeDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'yellowDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}};
 		localStorage.setItem('cart', JSON.stringify(cart));
 		console.log(cart);
 	}

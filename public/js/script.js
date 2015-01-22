@@ -1,6 +1,11 @@
 if (localStorage.getItem("cart") === null) {
-	var cart = { 'blueTell': {}, 'creamHappy': {}, 'lightBlueThunder': {}, 'pink': {},
-				 'whiteThunder': {}, 'stripeDrama': {}, 'yellowDrama': {}};
+	var cart = { 'blueTell': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'creamHappy': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'lightBlueThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'pink': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'whiteThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'stripeDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'yellowDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}};
 	localStorage.setItem('cart', JSON.stringify(cart));
 	console.log(cart);
 }
@@ -57,7 +62,7 @@ $(document).ready(function() {
 			cart.creamHappy.medium = $("#quantityCreamHappy option:selected").val();
 		}
 		else if($("#sizeCreamHappy option:selected").text() == "Large") {
-			cart.creamHappy.large = $("#quantityBlueTell option:selected").val();
+			cart.creamHappy.large = $("#quantityCreamHappy option:selected").val();
 		}
 		else if($("#sizeCreamHappy option:selected").text() == "XLarge") {
 			cart.creamHappy.xlarge = $("#quantityCreamHappy option:selected").val();
@@ -158,8 +163,13 @@ $(document).ready(function() {
 
 	$("#clear").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
-		cart = { 'blueTell': {}, 'creamHappy': {}, 'lightBlueThunder': {}, 'pink': {},
-				 'whiteThunder': {}, 'stripeDrama': {}, 'yellowDrama': {}};
+		cart = { 'blueTell': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'creamHappy': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'lightBlueThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'pink': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'whiteThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'stripeDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'yellowDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}};
 		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
