@@ -8,8 +8,32 @@ module.exports = function(app, passport) {
 		res.sendfile('./public/html/about.html');
 	});
 
-	app.get('/clothing', function(req, res) {
-		res.sendfile('./public/html/clothing_template.html');
+	app.get('/bluetell', function(req, res) {
+		res.sendfile('./public/html/blue_tell.html');
+	});
+	
+	app.get('/creamhappy', function(req, res) {
+		res.sendfile('./public/html/cream_happy.html');
+	});
+	
+	app.get('/lightblue', function(req, res) {
+		res.sendfile('./public/html/light_blue_thunder.html');
+	});
+	
+	app.get('/pink', function(req, res) {
+		res.sendfile('./public/html/pink.html');
+	});
+	
+	app.get('/whitethunder', function(req, res) {
+		res.sendfile('./public/html/white_thunder.html');
+	});
+	
+	app.get('/stripedrama', function(req, res) {
+		res.sendfile('./public/html/stripe_drama.html');
+	});
+	
+	app.get('/yellowdrama', function(req, res) {
+		res.sendfile('./public/html/yellow_drama.html');
 	});
 
 	app.get('/featured', function(req, res) {
