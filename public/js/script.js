@@ -1,17 +1,15 @@
 if (localStorage.getItem("cart") === null) {
-	var cart = { 'blueTell': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
-				 'creamHappy': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
-				 'lightBlueThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+	var cart = { 'blueTell': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'creamHappy': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'lightBlueThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
 				 'pink': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
-				 'whiteThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
-				 'stripeDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'whiteThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'stripeDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
 				 'yellowDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}};
 	localStorage.setItem('cart', JSON.stringify(cart));
-	console.log(cart);
 }
 else {
 	var cart = JSON.parse(localStorage.getItem('cart'));
-	console.log(cart);
 }
 
 $(document).ready(function() {
@@ -23,7 +21,7 @@ $(document).ready(function() {
 	$("#smallBlueTell2").click(function() {
 		$("#bigBlueTell").attr('src', '../img/blueTell2.png');
 	});
-	
+
 	// Toggles pictures on Yellow Drama
 	$("#smallYellowDrama1").click(function() {
 		$("#bigYellowDrama").attr('src', '../img/yellowDrama2.png');
@@ -39,7 +37,7 @@ $(document).ready(function() {
 	$("#smallLightBlue2").click(function() {
 		$("#bigLightBlue").attr('src', '../img/lightBlueThunder2.png');
 	});
-	
+
 	// Toggles pictures on Cream Happy Sad
 	$("#smallCreamHappy1").click(function() {
 		$("#bigCreamHappy").attr('src', '../img/creamHappy2.png');
@@ -47,7 +45,7 @@ $(document).ready(function() {
 	$("#smallCreamHappy2").click(function() {
 		$("#bigCreamHappy").attr('src', '../img/creamHappy1.png');
 	});
-	
+
 	// fades out pictures for added fx
 	$(".page-third, .myButton, #featured, .small").hover(function() {
 		$(this).fadeTo("fast", 0.5);
@@ -69,8 +67,7 @@ $(document).ready(function() {
 		}
 		else if($("#sizeBlueTell option:selected").text() == "XLarge") {
 			cart.blueTell.xlarge = $("#quantityBlueTell option:selected").val();
-		};
-		console.log(cart);
+		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
 
@@ -87,8 +84,7 @@ $(document).ready(function() {
 		}
 		else if($("#sizeCreamHappy option:selected").text() == "XLarge") {
 			cart.creamHappy.xlarge = $("#quantityCreamHappy option:selected").val();
-		};
-		console.log(cart);
+		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
 
@@ -105,8 +101,7 @@ $(document).ready(function() {
 		}
 		else if($("#sizeLightBlue option:selected").text() == "XLarge") {
 			cart.lightBlueThunder.xlarge = $("#quantityLightBlue option:selected").val();
-		};
-		console.log(cart);
+		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
 
@@ -123,8 +118,7 @@ $(document).ready(function() {
 		}
 		else if($("#sizePink option:selected").text() == "XLarge") {
 			cart.pink.xlarge = $("#quantityPink option:selected").val();
-		};
-		console.log(cart);
+		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
 
@@ -141,8 +135,7 @@ $(document).ready(function() {
 		}
 		else if($("#sizeWhiteThunder option:selected").text() == "XLarge") {
 			cart.whiteThunder.xlarge = $("#quantityWhiteThunder option:selected").val();
-		};
-		console.log(cart);
+		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
 
@@ -159,8 +152,7 @@ $(document).ready(function() {
 		}
 		else if($("#sizeStripeDrama option:selected").text() == "XLarge") {
 			cart.stripeDrama.xlarge = $("#quantityStripeDrama option:selected").val();
-		};
-		console.log(cart);
+		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
 
@@ -177,21 +169,19 @@ $(document).ready(function() {
 		}
 		else if($("#sizeYellowDrama option:selected").text() == "XLarge") {
 			cart.yellowDrama.xlarge = $("#quantityYellowDrama option:selected").val();
-		};
-		console.log(cart);
+		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
 
 	$("#clear").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
-		cart = { 'blueTell': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
-				 'creamHappy': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
-				 'lightBlueThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+		cart = { 'blueTell': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'creamHappy': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'lightBlueThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
 				 'pink': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
-				 'whiteThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
-				 'stripeDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}, 
+				 'whiteThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'stripeDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
 				 'yellowDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}};
-		console.log(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
 });
