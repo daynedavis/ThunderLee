@@ -117,10 +117,13 @@ module.exports = function(app, passport) {
 					cart                   : req.body.cartData,
 					done                   : false
 				} , function(err, order) {
-					if (err)
+					if (err) {
+						res.sendfile('./public/html/error.html');
 						console.log(err);
-					res.sendfile('./public/html/error.html');
-					console.log(err);
+					}
+					else {
+						res.sendfile('./public/html/success.html');
+					}
 				});
 			}
 		});
