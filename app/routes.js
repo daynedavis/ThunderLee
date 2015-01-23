@@ -1,7 +1,25 @@
+var Order = require('./models/order');
 module.exports = function(app, passport) {
 
+	// Admin Routes
+	app.get('/api/order', function(req, res) {
+
+		Order.find(function(err, order) {
+
+			if (err)
+			res.send(err);
+
+			res.json(order); // return all user in JSON format
+		});
+	});
+
+	// Site Routes
 	app.get('/', function(req, res) {
 		res.sendfile('./public/home.html');
+	});
+
+	app.get('/admin', function(req, res) {
+		res.sendfile('./public/html/admin.html');
 	});
 
 	app.get('/about', function(req, res) {
@@ -58,7 +76,7 @@ module.exports = function(app, passport) {
 		var stripe = require("stripe")("sk_test_SCMdCsdwdw2uUeLZeV01pYKj");
 		var totalAmount = 0;
 		var cart = JSON.parse(req.body.cartData);
-		console.log(cart);
+		console.log(req.body);
 		for (var shirt in cart) {
 			var sizes = cart[shirt];
 			for (var size in sizes) {
@@ -80,6 +98,25 @@ module.exports = function(app, passport) {
 		  if (err && err.type === 'StripeCardError') {
 			// The card has been declined
 		  }
+			else {
+				Order.create({
+					name                   : req.body.stripeShippingName,
+					email                  : req.body.stripeEmail,
+					shippingAddressLine1   : req.body.stripeShippingAddressLine1,
+					shippingAddressApt     : req.body.stripeShippingAddressApt,
+					shippingAddressZip     : req.body.stripeShippingAddressZip,
+					shippingAddressCity    : req.body.stripeShippingAddressCity,
+					shippingAddressState   : req.body.stripeShippingAddressState,
+					shippingAddressCountry : req.body.stripeShippingAddressCountry,
+					cost                   : totalAmount,
+					cart                   : req.body.cartData,
+					done                   : false
+				} , function(err, order) {
+					if (err)
+						console.log(err);
+					res.sendfile('./public/home.html');
+				});
+			}
 		});
 	});
 };
