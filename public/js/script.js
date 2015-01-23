@@ -16,19 +16,40 @@ else {
 
 $(document).ready(function() {
 
-	// Toggles pictures on the clothing pages
-	$("#small1").click(function() {
-		$("#big").attr('src', '../img/clothes_content2.png');
+	// Toggles pictures on Blue Tell Me about it
+	$("#smallBlueTell1").click(function() {
+		$("#bigBlueTell").attr('src', '../img/blueTell.png');
 	});
-	$("#small2").click(function() {
-		$("#big").attr('src', '../img/clothes_content3.png');
+	$("#smallBlueTell2").click(function() {
+		$("#bigBlueTell").attr('src', '../img/blueTell2.png');
 	});
-	$("#small3").click(function() {
-		$("#big").attr('src', '../img/clothes_content.png');
+	
+	// Toggles pictures on Yellow Drama
+	$("#smallYellowDrama1").click(function() {
+		$("#bigYellowDrama").attr('src', '../img/yellowDrama2.png');
+	});
+	$("#smallYellowDrama2").click(function() {
+		$("#bigYellowDrama").attr('src', '../img/yellowDrama.png');
 	});
 
+	// Toggles pictures on Light Blue Thunder Lee
+	$("#smallLightBlue1").click(function() {
+		$("#bigLightBlue").attr('src', '../img/lightBlueThunder.png');
+	});
+	$("#smallLightBlue2").click(function() {
+		$("#bigLightBlue").attr('src', '../img/lightBlueThunder2.png');
+	});
+	
+	// Toggles pictures on Cream Happy Sad
+	$("#smallCreamHappy1").click(function() {
+		$("#bigCreamHappy").attr('src', '../img/creamHappy2.png');
+	});
+	$("#smallCreamHappy2").click(function() {
+		$("#bigCreamHappy").attr('src', '../img/creamHappy1.png');
+	});
+	
 	// fades out pictures for added fx
-	$(".page-third, #featured, #small1, #small2, #small3").hover(function() {
+	$(".page-third, .myButton, #featured, .small").hover(function() {
 		$(this).fadeTo("fast", 0.5);
 	}, function() {
 		$(this).fadeTo("fast", 1);
