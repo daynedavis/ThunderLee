@@ -227,3 +227,9 @@ background yellow: #ffffe9*/
 	position:relative;
 	top:1px;
 }
+
+p.hidden {
+	display: none;
+}
+
+
