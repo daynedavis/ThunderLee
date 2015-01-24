@@ -172,6 +172,11 @@ $(document).ready(function() {
 		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
+	
+	//to notify them their item as been added
+	$(".myButton").click(function () {
+		$("#added").show().delay(1000).fadeOut();
+	});
 
 	$("#clear").click(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));

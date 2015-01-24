@@ -5,10 +5,9 @@
 
 
 <head>
-	<title>Cart-Thunder Lee</title>
+	<title>Thunder Lee</title>
 	<script src="../js/jquery-1.11.1.min.js"></script>
 	<script src="../js/script.js"></script>
-	<script src="../js/cart.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -22,36 +21,14 @@
 				<li><a class="nav" href="/about">About</a></li>
 			</ul>
 	</div>
-	<table>
-		<thead>
-			<tr><th colspan="3">Cart</th></tr>
-			<tr>
-				<th>Item</th>
-				<th>Size</th>
-				<th>Quantity</th>
-			</tr>
-		</thead>
-		<tbody id="checkoutBody">
-
-		</tbody>
-	</table>
 
 	<div class="content">
 		<div class="clothes-container">
-			<form action="/stripe" method="POST">
-				<input type="hidden" id="cartData" name="cartData">
-				  <script
-					src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					data-key="pk_test_pGYlozhddnYncPbhyHecOOy4"
-					data-amount=""
-					data-name="Thunder Lee Clothing"
-					data-description="Shirts"
-					data-image="../img/thunder_lee_logo_small.png"
-					data-billingAddress="true"
-					data-shippingAddress="true">
-				  </script>
-			</form>
+			<h1>We're sorry! An error occurred while processing your request.<h1>
+			</br>
+			<h2><a href="/cart">Return to cart</a>
 		</div>
+		
 	</div>
 
 	<div class="footer">

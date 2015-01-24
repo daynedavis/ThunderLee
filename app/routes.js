@@ -65,8 +65,13 @@ module.exports = function(app, passport) {
 	app.get('/womens', function(req, res) {
 		res.sendfile('./public/html/womens.html');
 	});
+	
 	app.get('/cart', function(req, res) {
 		res.sendfile('./public/html/checkout.html');
+	});
+	
+	app.get('/error', function(req, res) {
+		res.sendfile('./public/html/error.html');
 	});
 
 	app.post('/stripe', function(req, res) {
@@ -112,9 +117,13 @@ module.exports = function(app, passport) {
 					cart                   : req.body.cartData,
 					done                   : false
 				} , function(err, order) {
-					if (err)
+					if (err) {
+						res.sendfile('./public/html/error.html');
 						console.log(err);
-					res.sendfile('./public/home.html');
+					}
+					else {
+						res.sendfile('./public/html/success.html');
+					}
 				});
 			}
 		});
