@@ -29,6 +29,18 @@
 			</br>
 			<h2><a href="/">Home</a>
 		</div>
+		<script>
+			window.onload = function() {
+				var cart = { 'blueTell': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'creamHappy': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'lightBlueThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'pink': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'whiteThunder': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'stripeDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0},
+				 'yellowDrama': {'small':0, 'medium':0, 'large':0, 'xlarge':0}};
+				localStorage.setItem('cart', JSON.stringify(cart));
+			};
+		</script>
 		
 	</div>
 
