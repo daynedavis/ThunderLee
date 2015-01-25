@@ -156,6 +156,7 @@ a:hover
 	margin-top: 20px;
 	font-family: avenir;
 	text-align: center;
+	color: black;
 }
 a.foot {
 	text-decoration: none;
@@ -187,13 +188,19 @@ th:first-child, td:first-child {padding: 0 15px 0 20px;}
 thead tr:last-child th {border-bottom: 2px solid #ddd;}
 
 tbody tr:hover {background-color: #f0fbff;}
-tbody tr:last-child td {border: none;}
+tbody tr:last-child td {border-bottom: 1px solid #ddd;}
 tbody td {border-bottom: 1px solid #ddd;}
 
 td:last-child {
 	text-align: left;
 	padding-right: 10px;
 }
+
+#button {
+	border: none;
+	text-align: right;
+}
+
 
 
 
