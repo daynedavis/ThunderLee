@@ -7,6 +7,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var database = require('./config/database'); 			// load the database config
 var morgan   = require('morgan');
+var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var session = require('express-session');
@@ -29,7 +30,7 @@ app.use(passport.session());
 app.use(flash());*/
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport);
+require('./app/routes.js')(app, passport, nodemailer);
 //require('./config/passport')(passport);
 
 // listen (start app with node server.js) ======================================

@@ -14,6 +14,8 @@ else {
 
 $(document).ready(function() {
 
+	$('.footer').html('&copy; Thunder Lee');
+
 	// Toggles pictures on Blue Tell Me about it
 	$("#smallBlueTell1").click(function() {
 		$("#bigBlueTell").attr('src', '../img/blueTell.png');
@@ -172,7 +174,7 @@ $(document).ready(function() {
 		}
 		localStorage.setItem('cart', JSON.stringify(cart));
 	});
-	
+
 	//to notify them their item as been added
 	$(".myButton").click(function () {
 		$("#added").show().delay(1000).fadeOut();

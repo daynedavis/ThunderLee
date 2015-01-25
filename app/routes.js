@@ -65,11 +65,11 @@ module.exports = function(app, passport) {
 	app.get('/womens', function(req, res) {
 		res.sendfile('./public/html/womens.html');
 	});
-	
+
 	app.get('/cart', function(req, res) {
 		res.sendfile('./public/html/checkout.html');
 	});
-	
+
 	app.get('/error', function(req, res) {
 		res.sendfile('./public/html/error.html');
 	});
@@ -123,6 +123,40 @@ module.exports = function(app, passport) {
 					}
 					else {
 						res.sendfile('./public/html/success.html');
+
+						// create reusable transporter object using SMTP transport
+						var nodemailer = require('nodemailer');
+						var transporter = nodemailer.createTransport({
+							service: 'Gmail',
+							auth: {
+								user: 'thunderleeclothing@gmail.com',
+								pass: 'Harvard321'
+							}
+						});
+
+						// NB! No need to recreate the transporter object. You can use
+						// the same transporter object for all e-mails
+
+						// setup e-mail data with unicode symbols
+						var mailOptions = {
+							from: 'Thunder Lee  <thunderleeclothing@gmail.com>', // sender address
+							to: req.body.stripeEmail, // list of receivers
+							bcc: 'thunderleeclothing@gmail.com',
+							subject: 'Your Order With Us', // Subject line
+							text: 'We have received your order and are currently proccessing it. You will receive another email once your order has been shipped. Email us at thunderleeclothing@gmail.com with any questions or concerns.', // plaintext body
+							html: '<b>We have received your order and are currently proccessing it. You will receive another email once your order has been shipped. Email us at thunderleeclothing@gmail.com with any questions or concerns.</b>' // html body
+						};
+
+						// send mail with defined transport object
+						transporter.sendMail(mailOptions, function(error, info){
+							if(error){
+								console.log(error);
+							}else{
+								console.log('Message sent: ' + info.response);
+							}
+						});
+
+
 					}
 				});
 			}
