@@ -191,7 +191,7 @@ tbody tr:last-child td {border: none;}
 tbody td {border-bottom: 1px solid #ddd;}
 
 td:last-child {
-	text-align: right;
+	text-align: left;
 	padding-right: 10px;
 }
 
@@ -231,5 +231,3 @@ background yellow: #ffffe9*/
 p.hidden {
 	display: none;
 }
-
-
