@@ -14,13 +14,17 @@ $(document).ready(function() {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		$('#cartData').val(localStorage.getItem('cart'));
 	}
+	var total = 0;
 	for (var shirt in cart) {
 		var sizes = cart[shirt];
 		for (var size in sizes) {
 			var quantity = sizes[size];
 			if (quantity > 0) {
 				$('#checkoutBody').append("<tr><td>" + shirt + "</td><td>" + size + "</td><td>" + quantity);
+				total += 30*quantity;
 			}
 		}
 	}
+
+	$('#total').append('$' + total);
 });
