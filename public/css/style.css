@@ -63,6 +63,11 @@ a.nav {
 	text-decoration: none;
 }
 
+a {
+	text-decoration: none;
+	color: #000;
+}
+
 
 
 a:hover

@@ -14,7 +14,7 @@ else {
 
 $(document).ready(function() {
 
-	$('.footer').html('&copy; Thunder Lee');
+	$('.footer').html("&copy; Copyright, Thunder Lee LLC | <a href='/contact'>Contact Us</a>");
 
 	// Toggles pictures on Blue Tell Me about it
 	$("#smallBlueTell1").click(function() {

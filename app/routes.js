@@ -69,6 +69,10 @@ module.exports = function(app, passport) {
 	app.get('/cart', function(req, res) {
 		res.sendfile('./public/html/checkout.html');
 	});
+	
+	app.get('/contact', function(req, res) {
+		res.sendfile('./public/html/contact.html');
+	});
 
 	app.get('/error', function(req, res) {
 		res.sendfile('./public/html/error.html');
