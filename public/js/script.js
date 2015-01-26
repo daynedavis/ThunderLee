@@ -49,7 +49,7 @@ $(document).ready(function() {
 	});
 
 	// fades out pictures for added fx
-	$(".page-third, .myButton, #featured, .small").hover(function() {
+	$(".third, .myButton, #featured, .small").hover(function() {
 		$(this).fadeTo("fast", 0.5);
 	}, function() {
 		$(this).fadeTo("fast", 1);
