@@ -14,7 +14,14 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 
 // configuration ===============================================================
-mongoose.connect(database.url);
+var options = {
+	db: { native_parser: true },
+	server: { poolSize: 5 },
+	replset: { rs_name: 'myReplicaSetName' },
+	user: 'thunderleeclothing',
+	pass: 'Harvard321'
+};
+mongoose.connect(database.url, options);
 
 app.use(express.static(__dirname + '/public')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
