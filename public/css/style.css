@@ -15,7 +15,7 @@ body {
 	background-color: #abdeff;
 	position: relative;
 	font-family: avenir;
-
+	padding-left: 26%;
 }
 
 h1 {
@@ -42,9 +42,9 @@ h5 {
 
 
 ul {
-    list-style-type: none;
+    list-style: none;
+		display: inline;
     margin: 0;
-    padding-left: 160px;
     overflow: hidden;
     font-family: avenir;
     position: absolute;
