@@ -23,7 +23,7 @@ var options = {
 };
 mongoose.connect(database.url, options);
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/src'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
@@ -32,8 +32,10 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(cookieParser());
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport, nodemailer);
-
+// require('./app/routes.js')(app, passport, nodemailer);
+app.get('/*', function(req, res) {
+  res.sendfile(__dirname + '/src/index.html');
+});
 // listen (start app with node server.js) ======================================
 app.listen(port);
 console.log("App listening on port " + port);
