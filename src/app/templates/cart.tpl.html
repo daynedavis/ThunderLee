@@ -23,19 +23,15 @@
 	<th></th>
 	<th></th>
 	<th>
-		<form action="/stripe" method="POST">
-			<input type="hidden" id="cartData" name="cartData">
-			<script
-			src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-			data-key="pk_test_pGYlozhddnYncPbhyHecOOy4"
+		<button class="checkout-button" stripe-checkout="checkout"
+            data-key="pk_test_pGYlozhddnYncPbhyHecOOy4"
 			data-amount=""
 			data-name="Thunder Lee Clothing"
 			data-description="Shirts"
-			data-image="assets/img/thunder_lee_logo_small.png"
 			data-billingAddress="true"
 			data-shippingAddress="true">
-			</script>
-		</form>
+      Buy
+    </button>
 	</th>
 </tr></table>
 

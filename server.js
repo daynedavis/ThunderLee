@@ -12,6 +12,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
+var Order = require('app/models/order');
 
 // configuration ===============================================================
 var options = {
@@ -32,10 +33,12 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(cookieParser());
 
 // routes ======================================================================
-// require('./app/routes.js')(app, passport, nodemailer);
+require('./config/routes.js')(app, passport, nodemailer, Order);
+
 app.get('/*', function(req, res) {
   res.sendfile(__dirname + '/src/index.html');
 });
+
 // listen (start app with node server.js) ======================================
 app.listen(port);
 console.log("App listening on port " + port);
