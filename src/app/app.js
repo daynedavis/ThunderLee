@@ -47,4 +47,7 @@ angular.module('thunder', ['thunder.routes', 'thunder.controllers'])
             text: 'Yellow Drama'
         }
     };
+
+    $rootScope.cart = JSON.parse(localStorage.getItem('cart')) || {};
+    localStorage.setItem('cart', JSON.stringify($rootScope.cart));
 });

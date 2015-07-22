@@ -26,6 +26,7 @@ angular.module("thunder.routes", ["ui.router"])
         })
         .state('cart', {
             url: '/cart',
+            controller: "CartController",
             templateUrl: 'app/templates/cart.tpl.html'
         })
         .state('about', {
