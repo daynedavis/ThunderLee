@@ -31,6 +31,10 @@ angular.module("thunder.routes", ["ui.router"])
             url: '/about',
             templateUrl: 'app/templates/about.tpl.html'
         })
+        .state('contact', {
+            url: '/contact',
+            templateUrl: 'app/templates/contact.tpl.html'
+        })
         .state('item', {
             url: '/item/:itemName',
             controller: "ItemController",
