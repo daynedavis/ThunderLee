@@ -3,7 +3,7 @@
 	"version"      : "0.0.0",
 	"description"  : "Clothing Site.",
 	"main"         : "server.js",
-	"author"       : "Dayne Davis",
+	"author"       : "Jordan Becerra",
 	"dependencies" : {
 		"bcrypt-nodejs"   : "latest",
 		"bittorrent-dht"  : "~2.6.4",
@@ -20,6 +20,6 @@
 		"nodemailer"      : "~0.2.4",
 		"passport"        : "~0.1.17",
 		"passport-local"  : "~0.1.6",
-		"stripe": "~2.2.0"
+		"stripe"          : "~2.2.0"
 	}
 }
