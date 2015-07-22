@@ -6,7 +6,11 @@ angular.module("thunder.controllers", [])
 
 .controller("CartController", function($scope, $rootScope) {
 	$scope.cart = $rootScope.cart;
-
+	$scope.cartTotal = 0;
+	_.forEach($scope.cart, function(item) {
+		$scope.cartTotal+= item.quantity * 30;
+	});
+	console.log($scope.cartTotal);
 	$scope.checkout = function(cart) {
 
 	};
@@ -21,6 +25,12 @@ angular.module("thunder.controllers", [])
 	$scope.itemText = $rootScope.itemInfo[$scope.shirt].text;
 
 	$scope.addItem = function(size, quantity) {
-		console.log(size, quantity);
+		var key = $scope.shirt + '/' + size;
+		$rootScope.cart[key] = $rootScope.cart[key] || {};
+		$rootScope.cart[key].name = $scope.shirt;
+		$rootScope.cart[key].size = size;
+		$rootScope.cart[key].quantity = $rootScope.cart[key].quantity || 0;
+		$rootScope.cart[key].quantity = $rootScope.cart[key].quantity + parseInt(quantity);
+    	localStorage.setItem('cart', JSON.stringify($rootScope.cart));
 	};
 });

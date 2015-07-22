@@ -10,12 +10,12 @@
 		</tr>
 	</thead>
 	<tbody id="checkoutBody">
-
+		<tr ng-repeat="item in cart"><td> {{item.name}}  </td><td>  {{item.size}}  </td><td>  {{item.quantity}}</tr>
 	</tbody>
 	<tr>
 		<td>Total</td>
 		<td></td>
-		<td id="total"></td>
+		<td id="total">${{cartTotal}}</td>
 	</tr>
 </table>
 
@@ -31,7 +31,7 @@
 			data-amount=""
 			data-name="Thunder Lee Clothing"
 			data-description="Shirts"
-			data-image="../img/thunder_lee_logo_small.png"
+			data-image="assets/img/thunder_lee_logo_small.png"
 			data-billingAddress="true"
 			data-shippingAddress="true">
 			</script>
