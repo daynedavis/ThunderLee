@@ -1,0 +1,36 @@
+<ng-include src="'app/templates/header.tpl.html'"></ng-include>
+<div class="content">
+
+	<div class="clothes-container">
+		<h1>{{itemText}}</h1>
+		<div class="clothes-content">
+			<img src="{{largeImg}}">
+		</div>
+		<div class="clothes-small-pics">
+			<img class="small" src="{{smallImg1}}">
+			<img class="small" src="{{smallImg2}}">
+		</div>
+		<div class="clothes-text">
+			100% Cotton
+			</br>
+			<select ng-model="size">
+			  <option value="Small">Small</option>
+			  <option value="Medium">Medium</option>
+			  <option value="Large">Large</option>
+			  <option value="XLarge">XLarge</option>
+			</select>
+			</br>
+			<select ng-model="quantity">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+			</select>
+			</br>
+			<button class="myButton" id="cartCreamHappy" ng-click="addItem(size, quantity)">Add to Cart</button>
+			<p id="added" class="hidden">Added to Cart!</p>
+		</div>
+	</div>
+</div>
+<ng-include src="'app/templates/footer.tpl.html'"></ng-include>
