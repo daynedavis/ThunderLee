@@ -1,6 +1,5 @@
 module.exports = function(app, passport, nodemailer, Order) {
 
-	// Admin Routes
 	app.get('/api/order', function(req, res) {
 
 		Order.find(function(err, order) {
@@ -8,13 +7,11 @@ module.exports = function(app, passport, nodemailer, Order) {
 			if (err)
 			res.send(err);
 
-			res.json(order); // return all user in JSON format
+			res.json(order);
 		});
 	});
 
 	app.post('/api/stripe', function(req, res) {
-		// Set your secret key: remember to change this to your live secret key in production
-		// See your keys here https://dashboard.stripe.com/account
 		var stripe = require("stripe")("sk_test_SCMdCsdwdw2uUeLZeV01pYKj");
 		var totalAmount = 0;
 		var cart = JSON.parse(req.body.data.cartData);
@@ -23,8 +20,6 @@ module.exports = function(app, passport, nodemailer, Order) {
 			totalAmount+= (2500 * quantity);
 		}
 
-		// (Assuming you're using express - expressjs.com)
-		// Get the credit card details submitted by the form
 		var stripeToken = req.body.stripeToken;
 
 		var charge = stripe.charges.create({
@@ -55,7 +50,6 @@ module.exports = function(app, passport, nodemailer, Order) {
 						console.log(err);
 					}
 					else {
-						// create reusable transporter object using SMTP transport
 						var nodemailer = require('nodemailer');
 						var transporter = nodemailer.createTransport({
 							service: 'Gmail',
@@ -65,20 +59,15 @@ module.exports = function(app, passport, nodemailer, Order) {
 							}
 						});
 
-						// NB! No need to recreate the transporter object. You can use
-						// the same transporter object for all e-mails
-
-						// setup e-mail data with unicode symbols
 						var mailOptions = {
-							from: 'Thunder Lee  <thunderleeclothing@gmail.com>', // sender address
-							to: req.body.stripeEmail, // list of receivers
+							from: 'Thunder Lee  <thunderleeclothing@gmail.com>',
+							to: req.body.stripeEmail,
 							bcc: 'thunderleeclothing@gmail.com',
-							subject: 'Your Order With Us', // Subject line
+							subject: 'Your Order With Us',
 							text: 'We have received your order and are currently proccessing it. You will receive another email once your order has been shipped. Email us at thunderleeclothing@gmail.com with any questions or concerns.', // plaintext body
 							html: '<b>We have received your order and are currently proccessing it. You will receive another email once your order has been shipped. Email us at thunderleeclothing@gmail.com with any questions or concerns.</b>' // html body
 						};
 
-						// send mail with defined transport object
 						transporter.sendMail(mailOptions, function(error, info){
 							if(error){
 								console.log(error);

@@ -12,7 +12,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
-var Order = require('config/models/order');
+var Order = require('./config/models/order');
 
 // configuration ===============================================================
 var options = {
